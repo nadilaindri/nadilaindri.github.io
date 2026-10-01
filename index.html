@@ -7,7 +7,7 @@
   <meta name="description" content="Portfolio of Nadila Indriyani Rangkuti, Software Quality Assurance Engineer with 3+ years of experience in web, mobile, and API testing.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -17,19 +17,28 @@
   <header class="topbar" id="topbar">
     <div class="topbar-inner">
       <a href="#intro" class="brand" aria-label="Home">
-        <span class="brand-mark">N</span>
-        <span class="brand-text">NADILA<span>.</span></span>
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <rect width="40" height="40" rx="11" fill="#1f4e8c"/>
+          <path d="M13 28.5V11.5" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+          <path d="M27 11.5v17" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+          <path d="M13.6 12.3l12.8 15.4" stroke="#f3b0c3" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-text">Nadila<span>.</span></span>
       </a>
       <nav class="top-nav" id="sideNav">
-        <a href="#intro" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#resume">Resume</a>
-        <a href="#process">How I Test</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a href="https://drive.google.com/file/d/1oMo_MQm7DcTD92ldPxabVCFiBAfcJkn7/view?usp=sharing" class="btn btn-sm nav-cv-mobile" target="_blank" rel="noopener"><i class="mdi mdi-download"></i> Download CV</a>
+        <a href="#intro" class="active"><span data-i18n="navHome">Home</span></a>
+        <a href="#resume"><span data-i18n="navResume">Resume</span></a>
+        <a href="#certification"><span data-i18n="navCert">Certification</span></a>
+        <a href="#process"><span data-i18n="navProcess">How I Test</span></a>
+        <a href="#projects"><span data-i18n="navProjects">Projects</span></a>
+        <a href="#contact"><span data-i18n="navContact">Contact</span></a>
+        <a href="CV_Nadila_Indriyani_Rangkuti.pdf" class="btn btn-sm nav-cv-mobile" target="_blank" rel="noopener"><span data-i18n="downloadCv">Download CV</span></a>
       </nav>
-      <a href="https://drive.google.com/file/d/1oMo_MQm7DcTD92ldPxabVCFiBAfcJkn7/view?usp=sharing" class="btn btn-sm nav-cv" target="_blank" rel="noopener"><i class="mdi mdi-download"></i> Download CV</a>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="id" aria-pressed="false">ID</button>
+      </div>
+      <a href="CV_Nadila_Indriyani_Rangkuti.pdf" class="btn btn-sm nav-cv" target="_blank" rel="noopener"><span data-i18n="downloadCv">Download CV</span></a>
       <button class="menu-toggle" id="menuToggle" aria-label="Open menu"><i class="mdi mdi-menu"></i></button>
     </div>
   </header>
@@ -40,64 +49,51 @@
     <section class="section intro" id="intro">
       <div class="intro-grid">
         <div class="intro-text">
-          <span class="status"><span class="dot"></span> Open to QA opportunities · Bogor, Indonesia</span>
-        <h2 class="headline">I make sure every release is <span class="hl">reliable</span>, <span class="hl">usable</span>, and <span class="hl">ready</span> for production.</h2>
-        <p class="lead">Software Quality Assurance Engineer with 3+ years of experience testing web and mobile applications, UI/UX, and backend API integrations — from test scenario design to SIT &amp; UAT sign-off.</p>
+          <p class="hello"><span data-i18n="hello">Hello! I AM</span></p>
+          <!-- Teks berjalan: ubah daftar kata di data-words (pisahkan dengan |) -->
+          <h2 class="headline" aria-label="Nadila Indriyani Rangkuti">
+            <span class="ghost" aria-hidden="true">Nadila Indriyani Rangkuti</span>
+            <span class="type-layer" aria-hidden="true"><span class="typed" id="typed" data-words="Nadila Indriyani Rangkuti">Nadila Indriyani Rangkuti</span><span class="caret"></span></span>
+          </h2>
+          <p class="role">Software QA Engineer</p>
+          <div class="about-text">
+            <p><span data-i18n="about1">I specialize in ensuring the reliability of web and mobile application ecosystems, UI/UX, and backend API integrations. My core work includes building functional test suites, tracing bugs down to their root cause, documenting QA results, and writing user manuals that are easy to understand.</span></p>
+            <p><span data-i18n="about2">Before QA, I worked as a Mobile &amp; Front-End Developer. That background helps me read the system the way developers do — so my bug reports are precise, and conversations with BA and developer teams move faster.</span></p>
+          </div>
         <div class="actions">
-          <a href="#projects" class="btn">See My Work <i class="mdi mdi-arrow-right"></i></a>
-          <a href="#contact" class="btn btn-ghost">Contact Me</a>
+          <a href="#projects" class="btn"><span data-i18n="seeWork">See My Work</span> <i class="mdi mdi-arrow-right"></i></a>
+          <a href="#contact" class="btn btn-ghost"><span data-i18n="contactMe">Contact Me</span></a>
         </div>
         <!-- Sosial media: ganti href="#" dengan link Anda. Ikon dengan href="#" otomatis disembunyikan. -->
         <div class="socials">
           <a href="https://wa.me/628588704216" target="_blank" rel="noopener" class="soc soc-wa" aria-label="WhatsApp"><i class="mdi mdi-whatsapp"></i></a>
-          <a href="#" target="_blank" rel="noopener" class="soc soc-ig" aria-label="Instagram"><i class="mdi mdi-instagram"></i></a>
           <a href="https://github.com/nadilaindri" target="_blank" rel="noopener" class="soc soc-gh" aria-label="GitHub"><i class="mdi mdi-github"></i></a>
           <a href="https://www.linkedin.com/in/nadila-indriyani-r-2b69b2191/" target="_blank" rel="noopener" class="soc soc-in" aria-label="LinkedIn"><i class="mdi mdi-linkedin"></i></a>
           <a href="mailto:nadilaindriyanirangkuti@gmail.com" class="soc soc-mail" aria-label="Email"><i class="mdi mdi-email-outline"></i></a>
         </div>
         </div>
         <div class="intro-photo">
-          <!-- Foto: simpan file photo.jpg di folder ini, otomatis tampil -->
+          <!-- Avatar: simpan foto sebagai photo.jpg di folder ini, otomatis tampil -->
           <div class="photo no-photo" id="photo"><span>NIR</span></div>
-          <div class="photo-tag"><strong>Nadila Indriyani Rangkuti</strong><span>Software Quality Assurance</span></div>
         </div>
       </div>
 
       <div class="stats">
-        <div class="stat"><strong>3+</strong><span>Years in Software QA</span></div>
-        <div class="stat"><strong>4</strong><span>Professional roles</span></div>
-        <div class="stat"><strong>300</strong><span>Devices deployed at Allianz</span></div>
-        <div class="stat"><strong>3.74</strong><span>GPA, Information Systems</span></div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="sec-label"><span>01</span> About</div>
-      <div class="about">
-        <div>
-          <h3 class="sec-title">A QA engineer with a developer's perspective.</h3>
-          <p>I specialize in ensuring the reliability of web and mobile application ecosystems, UI/UX, and backend API integrations. My core work includes building functional test suites, tracing bugs down to their root cause, documenting QA results, and writing user manuals that are easy to understand.</p>
-          <p>Before QA, I worked as a Mobile &amp; Front-End Developer. That background helps me read the system the way developers do — so my bug reports are precise, and conversations with BA and developer teams move faster.</p>
-        </div>
-        <ul class="facts">
-          <li><i class="mdi mdi-map-marker-outline"></i><div><small>Location</small>Bogor, Indonesia</div></li>
-          <li><i class="mdi mdi-briefcase-check-outline"></i><div><small>Current role</small>Software QA · PT AMA Salam Indonesia</div></li>
-          <li><i class="mdi mdi-target"></i><div><small>Focus</small>Web, Mobile &amp; API Testing</div></li>
-          <li><i class="mdi mdi-certificate-outline"></i><div><small>Certification</small>CompTIA CySA+</div></li>
-        </ul>
+        <div class="stat"><strong>3+</strong><span><span data-i18n="stat1">Years in Software QA</span></span></div>
+        <div class="stat"><strong>4</strong><span><span data-i18n="stat2">Professional roles</span></span></div>
+        <div class="stat"><strong>3.74</strong><span><span data-i18n="stat3">GPA, Information Systems</span></span></div>
       </div>
     </section>
 
     <!-- RESUME (tabs) -->
     <section class="section" id="resume">
-      <div class="sec-label"><span>02</span> Resume</div>
-      <h3 class="sec-title">Skills, experience &amp; education.</h3>
+      <div class="sec-label"><span>01</span> <span data-i18n="navResume">Resume</span></div>
+      <h3 class="sec-title"><span data-i18n="resumeTitle">Skills, experience &amp; education.</span></h3>
 
       <div class="tabs" role="tablist">
-        <button class="tab active" role="tab" data-tab="skills"><i class="mdi mdi-toolbox-outline"></i> Skills</button>
-        <button class="tab" role="tab" data-tab="experience"><i class="mdi mdi-briefcase-outline"></i> Experience</button>
-        <button class="tab" role="tab" data-tab="education"><i class="mdi mdi-school-outline"></i> Education</button>
+        <button class="tab active" role="tab" data-tab="skills"><i class="mdi mdi-toolbox-outline"></i> <span data-i18n="tabSkills">Skills</span></button>
+        <button class="tab" role="tab" data-tab="experience"><i class="mdi mdi-briefcase-outline"></i> <span data-i18n="tabExp">Experience</span></button>
+        <button class="tab" role="tab" data-tab="education"><i class="mdi mdi-school-outline"></i> <span data-i18n="tabEdu">Education</span></button>
       </div>
 
       <div class="pane active" id="skills" role="tabpanel">
@@ -112,74 +108,74 @@
         </div>
         <div class="group">
           <h4><i class="mdi mdi-robot-outline"></i> Automation Testing</h4>
-          <ul class="chips"><li>Selenium</li><li>Katalon Studio</li><li>Appium Inspector</li></ul>
+          <ul class="chips"><li>Cypress</li><li>Selenium</li><li>Katalon Studio</li><li>Appium Inspector</li></ul>
         </div>
         <div class="group">
           <h4><i class="mdi mdi-clipboard-list-outline"></i> Test Case Development</h4>
           <ul class="chips"><li>Test Scenario Design</li><li>Functional Test Cases</li><li>UI/UX &amp; Usability</li><li>Test Data Preparation</li></ul>
         </div>
         <div class="group">
-          <h4><i class="mdi mdi-bug-outline"></i> Bug Tracking &amp; Docs</h4>
+          <h4><i class="mdi mdi-bug-outline"></i> <span data-i18n="skBug">Bug Tracking &amp; Docs</span></h4>
           <ul class="chips"><li>Jira</li><li>Trello</li><li>Asana</li><li>SIT/UAT Reports</li><li>User Manuals</li></ul>
         </div>
         <div class="group">
-          <h4><i class="mdi mdi-database-outline"></i> Tech Background</h4>
+          <h4><i class="mdi mdi-database-outline"></i> <span data-i18n="skTech">Tech Background</span></h4>
           <ul class="chips"><li>React JS</li><li>Flutter</li><li>PostgreSQL</li><li>MySQL</li><li>GitLab</li><li>GitHub</li></ul>
         </div>
       </div>
       </div>
 
       <div class="pane" id="experience" role="tabpanel">
-      <div class="jobs">
-        <article class="job">
-          <div class="job-when">Sep 2023<br>– Present</div>
-          <div class="job-body">
-            <h4>Software Quality Assurance <span class="now">Current</span></h4>
-            <p class="org">PT AMA Salam Indonesia · Bogor</p>
-            <ul>
-              <li>Designed and executed test scenarios covering logic, business flows, system integration, and end-to-end testing.</li>
-              <li>Performed manual testing on web and mobile applications using positive and negative test cases.</li>
-              <li>Documented comprehensive SIT and UAT results to support user testing readiness before production.</li>
-              <li>Created user manual documentation for web and mobile systems.</li>
-              <li>Collaborated with BA and developer teams to resolve defects and prevent recurrence.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="job">
-          <div class="job-when">Jan 2022<br>– Sep 2023</div>
-          <div class="job-body">
-            <h4>Mobile Developer &amp; Front-End Developer</h4>
-            <p class="org">PT Techub by Binawan · Jakarta</p>
-            <ul>
-              <li>Developed web and mobile applications for a job vacancy portal using React JS and Flutter.</li>
-              <li>Developed a mobile employee attendance application for check-in/check-out and leave requests.</li>
-              <li>Developed a web application for the Ministry of Education's MBKM program.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="job">
-          <div class="job-when">Jul 2021<br>– Sep 2021</div>
-          <div class="job-body">
-            <h4>System Engineer</h4>
-            <p class="org">PT Asuransi Allianz Life Indonesia · Jakarta</p>
-            <ul>
-              <li>Installed Office 365 on 300 devices and ensured no crashes after installation.</li>
-              <li>Documented users and devices upgraded to Office 365.</li>
-            </ul>
-          </div>
-        </article>
-        <article class="job">
-          <div class="job-when">Feb 2021<br>– Apr 2021</div>
-          <div class="job-body">
-            <h4>Mentor / Instructor</h4>
-            <p class="org">Infra Digital Foundation · Jakarta</p>
-            <ul>
-              <li>Mentored participants in cyber security training: information security, network security, ethical hacking, and application security.</li>
-              <li>Evaluated learning progress through pre-tests and post-tests.</li>
-            </ul>
-          </div>
-        </article>
-      </div>
+      <ol class="xp">
+        <li class="xp-item is-current">
+          <span class="xp-dot"></span>
+          <header class="xp-head">
+            <div class="xp-title">
+              <h4>Software Quality Assurance <span class="now"><span data-i18n="now">Current</span></span></h4>
+              <p class="xp-meta"><span><i class="mdi mdi-office-building-outline"></i> PT AMA Salam Indonesia</span><span><i class="mdi mdi-map-marker-outline"></i> Bogor</span></p>
+            </div>
+            <span class="xp-date"><i class="mdi mdi-calendar-blank-outline"></i> <span data-i18n="date1">Sep 2023 – Present</span></span>
+          </header>
+          <ul class="xp-points"><li><span><span data-i18n="xp1a">Designed and executed test scenarios covering logic, business flows, system integration, and end-to-end testing.</span></span></li><li><span><span data-i18n="xp1b">Performed manual testing on web and mobile using positive and negative test cases.</span></span></li><li><span><span data-i18n="xp1c">Documented comprehensive SIT and UAT results to support user testing readiness before production.</span></span></li><li><span><span data-i18n="xp1d">Created user manual documentation for web and mobile systems.</span></span></li><li><span><span data-i18n="xp1e">Collaborated with BA and developer teams to resolve defects and prevent recurrence.</span></span></li></ul>
+          <ul class="xp-tools"><li>Manual Testing</li><li>Postman</li><li>Jira</li><li>SIT / UAT</li></ul>
+        </li>
+        <li class="xp-item">
+          <span class="xp-dot"></span>
+          <header class="xp-head">
+            <div class="xp-title">
+              <h4>Mobile Developer &amp; Front-End Developer</h4>
+              <p class="xp-meta"><span><i class="mdi mdi-office-building-outline"></i> PT Techub by Binawan</span><span><i class="mdi mdi-map-marker-outline"></i> Jakarta</span></p>
+            </div>
+            <span class="xp-date"><i class="mdi mdi-calendar-blank-outline"></i> Jan 2022 – Sep 2023</span>
+          </header>
+          <ul class="xp-points"><li><span><span data-i18n="xp2a">Developed a job vacancy portal for web (React JS) and mobile (Flutter).</span></span></li><li><span><span data-i18n="xp2b">Developed a mobile employee attendance app for check-in/check-out and leave requests.</span></span></li><li><span><span data-i18n="xp2c">Developed a web application for the Ministry of Education's MBKM program.</span></span></li></ul>
+          <ul class="xp-tools"><li>React JS</li><li>Flutter</li><li>Mobile</li><li>Web</li></ul>
+        </li>
+        <li class="xp-item">
+          <span class="xp-dot"></span>
+          <header class="xp-head">
+            <div class="xp-title">
+              <h4>System Engineer</h4>
+              <p class="xp-meta"><span><i class="mdi mdi-office-building-outline"></i> PT Asuransi Allianz Life Indonesia</span><span><i class="mdi mdi-map-marker-outline"></i> Jakarta</span></p>
+            </div>
+            <span class="xp-date"><i class="mdi mdi-calendar-blank-outline"></i> Jul 2021 – Sep 2021</span>
+          </header>
+          <ul class="xp-points"><li><span><span data-i18n="xp3a">Installed Office 365 and verified no crashes occurred after installation.</span></span></li><li><span><span data-i18n="xp3b">Documented users and devices upgraded to Office 365.</span></span></li></ul>
+          <ul class="xp-tools"><li>Office 365</li><li>IT Deployment</li><li><span data-i18n="toolDoc">Documentation</span></li></ul>
+        </li>
+        <li class="xp-item">
+          <span class="xp-dot"></span>
+          <header class="xp-head">
+            <div class="xp-title">
+              <h4>Mentor / Instructor</h4>
+              <p class="xp-meta"><span><i class="mdi mdi-office-building-outline"></i> Infra Digital Foundation</span><span><i class="mdi mdi-map-marker-outline"></i> Jakarta</span></p>
+            </div>
+            <span class="xp-date"><i class="mdi mdi-calendar-blank-outline"></i> Feb 2021 – Apr 2021</span>
+          </header>
+          <ul class="xp-points"><li><span><span data-i18n="xp4a">Delivered material on information security fundamentals, network security, ethical hacking, and application security.</span></span></li><li><span><span data-i18n="xp4b">Evaluated learning progress through pre-tests and post-tests.</span></span></li></ul>
+          <ul class="xp-tools"><li>Cyber Security</li><li>Mentoring</li><li><span data-i18n="toolEval">Evaluation</span></li></ul>
+        </li>
+      </ol>
       </div>
 
       <div class="pane" id="education" role="tabpanel">
@@ -188,187 +184,248 @@
           <i class="mdi mdi-school-outline"></i>
           <div>
             <h4>Binaniaga University</h4>
-            <p class="org">Bachelor of Information Systems · 2021 – 2025</p>
-            <p>GPA 3.74/4.00. Systems analysis &amp; design, database management, software development, and IT governance.</p>
+            <p class="org"><span data-i18n="edu1org">Bachelor of Information Systems · 2021 – 2025</span></p>
+            <p><span data-i18n="edu1desc">GPA 3.74/4.00. Systems analysis &amp; design, database management, software development, and IT governance.</span></p>
           </div>
         </div>
         <div class="edu-item">
           <i class="mdi mdi-laptop"></i>
           <div>
-            <h4>Wikrama Vocational High School</h4>
-            <p class="org">Software Engineering · 2018 – 2021</p>
-            <p>Programming logic, system requirements analysis, and application development methodologies.</p>
-          </div>
-        </div>
-        <div class="edu-item cert">
-          <i class="mdi mdi-certificate-outline"></i>
-          <div>
-            <h4>CompTIA CySA+</h4>
-            <p class="org">Cybersecurity Analyst · Dec 2020</p>
-            <p>Threat detection, vulnerability management, and security analytics.</p>
+            <h4><span data-i18n="edu2name">Wikrama Vocational High School</span></h4>
+            <p class="org"><span data-i18n="edu2org">Software Engineering · 2018 – 2021</span></p>
+            <p><span data-i18n="edu2desc">Programming logic, system requirements analysis, and application development methodologies.</span></p>
           </div>
         </div>
       </div>
       </div>
     </section>
 
+    <!-- CERTIFICATION -->
+    <section class="section" id="certification">
+      <div class="sec-label"><span>02</span> <span data-i18n="certLabel">Licenses &amp; Certification</span></div>
+      <h3 class="sec-title"><span data-i18n="certTitle">Certification.</span></h3>
+      <div class="cert-grid">
+        <!-- Link sertifikat ada di data-drive (Google Drive, akses: Anyone with the link) -->
+        <button class="cert-card" type="button" data-drive="https://drive.google.com/file/d/1btXbLUBsybfmXA_xKYWgMr54SQRzfUci/view?usp=drive_link">
+          <span class="cert-icon"><i class="mdi mdi-certificate-outline"></i></span>
+          <h4>Junior Web Developer</h4>
+          <p class="cert-issuer">BNSP · LSP Teknologi Digital</p>
+          <p class="cert-meta"><span><span data-i18n="certWeb">Web Development</span></span></p>
+          <span class="cert-view"><span data-i18n="viewCert">View Certificate</span> <i class="mdi mdi-arrow-right"></i></span>
+        </button>
+        <button class="cert-card" type="button" data-drive="https://drive.google.com/file/d/1lirg2l05vPJtyAJUImIqDgJs1k7AMfg9/view?usp=drive_link">
+          <span class="cert-icon"><i class="mdi mdi-lan"></i></span>
+          <h4>CCNAv7: Introduction to Networks</h4>
+          <p class="cert-issuer">Cisco Networking Academy</p>
+          <p class="cert-meta"><span><span data-i18n="certNet">Networking</span></span></p>
+          <span class="cert-view"><span data-i18n="viewCert">View Certificate</span> <i class="mdi mdi-arrow-right"></i></span>
+        </button>
+        <button class="cert-card" type="button" data-drive="https://drive.google.com/file/d/17eckjnW7w2sdQ6Tr19hJaS6JvEbsK5Gf/view?usp=drive_link">
+          <span class="cert-icon"><i class="mdi mdi-shield-check-outline"></i></span>
+          <h4>CompTIA CySA+</h4>
+          <p class="cert-issuer">CompTIA</p>
+          <p class="cert-meta"><span>Cybersecurity Analyst</span></p>
+          <span class="cert-view"><span data-i18n="viewCert">View Certificate</span> <i class="mdi mdi-arrow-right"></i></span>
+        </button>
+        <button class="cert-card" type="button" data-drive="https://drive.google.com/file/d/1vJBVKHJYM9VhCyv0vMNxEbUSPfMK3HUI/view?usp=drive_link">
+          <span class="cert-icon"><i class="mdi mdi-security-network"></i></span>
+          <h4><span data-i18n="certCyber">Cyber Security Training</span></h4>
+          <p class="cert-issuer">Infra Digital Foundation × Mastercard</p>
+          <p class="cert-meta"><span><span data-i18n="certMod">Security+ &amp; CySA+ Modules</span></span></p>
+          <span class="cert-view"><span data-i18n="viewCert">View Certificate</span> <i class="mdi mdi-arrow-right"></i></span>
+        </button>
+      </div>
+    </section>
+
+    <!-- CERTIFICATE MODAL -->
+    <dialog class="modal cert-modal" id="certModal">
+      <button class="modal-close" id="certClose" aria-label="Close"><i class="mdi mdi-close"></i></button>
+      <span class="tag-type" id="cIssuer"></span>
+      <h4 id="cTitle"></h4>
+      <div class="cert-img" id="cImg"></div>
+    </dialog>
+
     <!-- PROCESS -->
     <section class="section" id="process">
-      <div class="sec-label"><span>03</span> How I Test</div>
-      <h3 class="sec-title">My QA workflow, from requirement to release.</h3>
+      <div class="sec-label"><span>03</span> <span data-i18n="navProcess">How I Test</span></div>
+      <h3 class="sec-title"><span data-i18n="processTitle">My QA workflow, from requirement to release.</span></h3>
       <ol class="steps">
-        <li><span class="num">1</span><h5>Understand</h5><p>Review requirements and business flows with BA to define what "correct" looks like.</p></li>
-        <li><span class="num">2</span><h5>Design</h5><p>Write test scenarios and cases — positive, negative, and edge — plus the test data they need.</p></li>
-        <li><span class="num">3</span><h5>Execute</h5><p>Run functional, integration, API, and end-to-end tests on web and mobile.</p></li>
-        <li><span class="num">4</span><h5>Report</h5><p>Log clear, reproducible defects in Jira and follow them through to the fix.</p></li>
-        <li><span class="num">5</span><h5>Sign-off</h5><p>Document SIT &amp; UAT results and user manuals so the release is production-ready.</p></li>
+        <li><span class="num">1</span><h5><span data-i18n="st1">Requirement Analysis</span></h5><p><span data-i18n="st1d">Review the BRD/user stories and business flows with the BA to understand scope, acceptance criteria, and what is testable.</span></p></li>
+        <li><span class="num">2</span><h5><span data-i18n="st2">Test Planning</span></h5><p><span data-i18n="st2d">Define the test scope, approach, test types, environment, and timeline for the release.</span></p></li>
+        <li><span class="num">3</span><h5><span data-i18n="st3">Test Case Design</span></h5><p><span data-i18n="st3d">Write test scenarios and test cases — positive, negative, and edge cases — and prepare the test data.</span></p></li>
+        <li><span class="num">4</span><h5><span data-i18n="st4">Test Execution (SIT)</span></h5><p><span data-i18n="st4d">Run functional, integration, API, and end-to-end tests on web and mobile in the SIT environment.</span></p></li>
+        <li><span class="num">5</span><h5><span data-i18n="st5">Defect Report &amp; Retest</span></h5><p><span data-i18n="st5d">Log reproducible defects in Jira, work with developers on the fix, then retest and run regression.</span></p></li>
+        <li><span class="num">6</span><h5><span data-i18n="st6">UAT Support</span></h5><p><span data-i18n="st6d">Support users during UAT — walk through scenarios, clarify issues, and track UAT findings until resolved.</span></p></li>
+        <li><span class="num">7</span><h5><span data-i18n="st7">Sign-off &amp; Release</span></h5><p><span data-i18n="st7d">Complete the SIT/UAT reports and user manual, give QA sign-off, and verify the release is production-ready.</span></p></li>
       </ol>
     </section>
 
     <!-- PROJECTS -->
     <section class="section" id="projects">
-      <div class="sec-label"><span>04</span> Projects</div>
-      <div class="slider-head">
-        <h3 class="sec-title">Selected work.</h3>
-        <div class="slider-arrows">
-          <button class="arrow" id="prevSlide" aria-label="Previous project"><i class="mdi mdi-chevron-left"></i></button>
-          <button class="arrow" id="nextSlide" aria-label="Next project"><i class="mdi mdi-chevron-right"></i></button>
-        </div>
-      </div>
+      <div class="sec-label"><span>04</span> <span data-i18n="navProjects">Projects</span></div>
       <div class="slider" id="slider">
+        <button class="arrow arrow-side arrow-prev" id="prevSlide" aria-label="Previous project"><i class="mdi mdi-chevron-left"></i></button>
+        <button class="arrow arrow-side arrow-next" id="nextSlide" aria-label="Next project"><i class="mdi mdi-chevron-right"></i></button>
         <div class="slides" id="slides">
-          <article class="slide" data-project="0">
-            <div class="shot" data-img="images/qa-enterprise.jpg">
-              <div class="mock"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body"><i class="mdi mdi-shield-check-outline"></i></div></div>
-              <span class="shot-badge"><i class="mdi mdi-shield-check-outline"></i></span>
+          <!-- data-drive: link Google Drive gambar proyek (akses: Anyone with the link). Dipakai untuk gambar kartu & pop-up View Project. -->
+          <article class="slide" data-drive="https://drive.google.com/file/d/1z3NKx-grc4w3uFmua7K7J57rbVN5dy4e/view?usp=sharing">
+            <div class="shot">
+              <div class="mock"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body"><i class="mdi mdi-file-document-multiple-outline"></i></div></div>
+              <span class="shot-badge"><i class="mdi mdi-file-document-multiple-outline"></i></span>
             </div>
             <div class="slide-body">
-              <span class="tag-type">QA · Current</span>
-              <h4>End-to-End QA for Enterprise Web &amp; Mobile</h4>
-              <p>Owned the QA cycle for business applications — test scenarios, manual &amp; API testing, defect management, SIT/UAT documentation, and user manuals.</p>
-              <button class="more" type="button">View Details <i class="mdi mdi-arrow-right"></i></button>
+              <span class="tag-type"><span data-i18n="tagIns">QA · Insurance</span></span>
+              <h4>BRI Life — Kumkara</h4>
+              <p><span data-i18n="pj1">Performed functional, integration, and end-to-end testing, managed defects with the development team, and documented SIT &amp; UAT results for Kumkara, BRI Life's core insurance system covering product setup, policies and participants, finance, claims, reinsurance, accounting, and underwriting.</span></p>
+              <button class="more" type="button"><span data-i18n="viewProject">View Project</span> <i class="mdi mdi-arrow-right"></i></button>
             </div>
-            <template class="detail">
-              <dl class="meta"><div><dt>Role</dt><dd>Software Quality Assurance</dd></div><div><dt>Company</dt><dd>PT AMA Salam Indonesia</dd></div><div><dt>Tools</dt><dd>Manual Testing, Postman, Jira</dd></div></dl>
-              <h5>What I did</h5>
-              <ul class="detail-list"><li>Designed and executed test scenarios covering logic, business flows, system integration, and end-to-end testing.</li><li>Performed manual testing on web and mobile using positive and negative test cases.</li><li>Validated backend APIs with Postman, checking JSON responses and HTTP status codes.</li><li>Documented SIT &amp; UAT results and created user manuals ahead of production releases.</li><li>Worked with BA and developers to resolve defects and prevent recurrence.</li></ul>
-            </template>
           </article>
-          <article class="slide" data-project="1">
-            <div class="shot" data-img="images/job-portal.jpg">
+          <article class="slide" data-drive="https://drive.google.com/file/d/1-3BeefOWhphvkBv0GJrPRwjCcZoaYuxZ/view?usp=sharing">
+            <div class="shot">
+              <div class="mock"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body"><i class="mdi mdi-chart-box-outline"></i></div></div>
+              <span class="shot-badge"><i class="mdi mdi-chart-box-outline"></i></span>
+            </div>
+            <div class="slide-body">
+              <span class="tag-type"><span data-i18n="tagIns">QA · Insurance</span></span>
+              <h4>BRI Life — Orbit</h4>
+              <p><span data-i18n="pj2">Conducted manual testing, defect tracking, and UAT support for Orbit, BRI Life's pricing kit that helps the marketing team manage prospects, create insurance illustrations, and monitor closing, claims, and renewals through a dashboard.</span></p>
+              <button class="more" type="button"><span data-i18n="viewProject">View Project</span> <i class="mdi mdi-arrow-right"></i></button>
+            </div>
+          </article>
+          <article class="slide" data-drive="https://drive.google.com/file/d/1NgSRnKtDfXp8qfoQOItYjjLDK0N_T5w3/view?usp=sharing">
+            <div class="shot">
+              <div class="mock"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body"><i class="mdi mdi-monitor-dashboard"></i></div></div>
+              <span class="shot-badge"><i class="mdi mdi-monitor-dashboard"></i></span>
+            </div>
+            <div class="slide-body">
+              <span class="tag-type"><span data-i18n="tagIns">QA · Insurance</span></span>
+              <h4>Hanwha Life — Web OP</h4>
+              <p><span data-i18n="pj3">Tested the web version of Orange Planner, Hanwha Life Indonesia's agent portal for selling insurance products, covering end-to-end business flows with positive and negative test cases and documenting SIT &amp; UAT results before release.</span></p>
+              <button class="more" type="button"><span data-i18n="viewProject">View Project</span> <i class="mdi mdi-arrow-right"></i></button>
+            </div>
+          </article>
+          <article class="slide" data-drive="https://drive.google.com/file/d/1eEhmIjbTIzD1ytqALbRwbh9GJxHM6M28/view?usp=sharing">
+            <div class="shot">
+              <div class="mock"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body"><i class="mdi mdi-cellphone"></i></div></div>
+              <span class="shot-badge"><i class="mdi mdi-cellphone"></i></span>
+            </div>
+            <div class="slide-body">
+              <span class="tag-type"><span data-i18n="tagIns">QA · Insurance</span></span>
+              <h4>Hanwha Life — Mobile OP</h4>
+              <p><span data-i18n="pj4">Performed manual testing with positive and negative test cases on the Orange Planner mobile app, Hanwha Life Indonesia's insurance product sales platform that lets agents work from their phones.</span></p>
+              <button class="more" type="button"><span data-i18n="viewProject">View Project</span> <i class="mdi mdi-arrow-right"></i></button>
+            </div>
+          </article>
+          <article class="slide" data-drive="https://drive.google.com/file/d/1IUlyhV5Vzgz4aCRzKeDJdGDoChr04pzH/view?usp=sharing">
+            <div class="shot">
+              <div class="mock"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body"><i class="mdi mdi-console"></i></div></div>
+              <span class="shot-badge"><i class="mdi mdi-console"></i></span>
+            </div>
+            <div class="slide-body">
+              <span class="tag-type"><span data-i18n="tagIns">QA · Insurance</span></span>
+              <h4>Hanwha Life — Web Console</h4>
+              <p><span data-i18n="pj5">Tested the Hanwha Life Web Console, an internal system for staff to manage agents and sales, from test scenario design and execution to defect reporting with developers and SIT &amp; UAT documentation.</span></p>
+              <button class="more" type="button"><span data-i18n="viewProject">View Project</span> <i class="mdi mdi-arrow-right"></i></button>
+            </div>
+          </article>
+          <article class="slide" data-drive="https://drive.google.com/file/d/1H0xBFz8-QeFrD5FNW1kX0DNUPbcY7Vlg/view?usp=sharing">
+            <div class="shot">
+              <div class="mock"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body"><i class="mdi mdi-shield-account-outline"></i></div></div>
+              <span class="shot-badge"><i class="mdi mdi-shield-account-outline"></i></span>
+            </div>
+            <div class="slide-body">
+              <span class="tag-type"><span data-i18n="tagIns">QA · Insurance</span></span>
+              <h4>CAR Syariah — Cordoba</h4>
+              <p><span data-i18n="pj6">Executed end-to-end testing in the UAT environment for Cordoba, CAR Syariah Life Insurance's web platform, and documented SIT &amp; UAT results to make sure the system was ready for production.</span></p>
+              <button class="more" type="button"><span data-i18n="viewProject">View Project</span> <i class="mdi mdi-arrow-right"></i></button>
+            </div>
+          </article>
+          <article class="slide" data-drive="https://drive.google.com/file/d/141mEZO2t4iuoSFiLe4-zjiu6fXgIAcnL/view?usp=sharing">
+            <div class="shot">
               <div class="mock"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body"><i class="mdi mdi-briefcase-search-outline"></i></div></div>
               <span class="shot-badge"><i class="mdi mdi-briefcase-search-outline"></i></span>
             </div>
             <div class="slide-body">
-              <span class="tag-type">Development</span>
-              <h4>Job Vacancy Portal</h4>
-              <p>A web and mobile platform that connects job seekers with employers, built with React JS for the web and Flutter for mobile.</p>
-              <button class="more" type="button">View Details <i class="mdi mdi-arrow-right"></i></button>
+              <span class="tag-type"><span data-i18n="tagFe">Front-End Development</span></span>
+              <h4>Jobshub — Web</h4>
+              <p><span data-i18n="pj7">Developed the web front end of Jobshub, a job portal that connects job seekers with local and overseas employers, including the sign-in, job search, and job application pages. Built with React JS.</span></p>
+              <button class="more" type="button"><span data-i18n="viewProject">View Project</span> <i class="mdi mdi-arrow-right"></i></button>
             </div>
-            <template class="detail">
-              <dl class="meta"><div><dt>Role</dt><dd>Mobile &amp; Front-End Developer</dd></div><div><dt>Company</dt><dd>PT Techub by Binawan</dd></div><div><dt>Tools</dt><dd>React JS, Flutter</dd></div></dl>
-              <h5>What I did</h5>
-              <ul class="detail-list"><li>Built the web front end with React JS.</li><li>Built the mobile application with Flutter.</li></ul>
-            </template>
           </article>
-          <article class="slide" data-project="2">
-            <div class="shot" data-img="images/attendance.jpg">
-              <div class="mock"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body"><i class="mdi mdi-account-clock-outline"></i></div></div>
-              <span class="shot-badge"><i class="mdi mdi-account-clock-outline"></i></span>
+          <article class="slide" data-drive="https://drive.google.com/file/d/1zloClY0jE1e6JTroRw6LGRWkT-n3H-9D/view?usp=sharing">
+            <div class="shot">
+              <div class="mock"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body"><i class="mdi mdi-cellphone-text"></i></div></div>
+              <span class="shot-badge"><i class="mdi mdi-cellphone-text"></i></span>
             </div>
             <div class="slide-body">
-              <span class="tag-type">Development</span>
-              <h4>Employee Attendance App</h4>
-              <p>A mobile app that lets employees record check-in and check-out times and submit leave requests.</p>
-              <button class="more" type="button">View Details <i class="mdi mdi-arrow-right"></i></button>
+              <span class="tag-type"><span data-i18n="tagMob">Mobile Development</span></span>
+              <h4>Jobshub — Mobile</h4>
+              <p><span data-i18n="pj8">Developed the Jobshub mobile app for job seekers to browse openings, search by job title, filter and sort listings by posted date, and save jobs on the go. Built with Flutter.</span></p>
+              <button class="more" type="button"><span data-i18n="viewProject">View Project</span> <i class="mdi mdi-arrow-right"></i></button>
             </div>
-            <template class="detail">
-              <dl class="meta"><div><dt>Role</dt><dd>Mobile Developer</dd></div><div><dt>Company</dt><dd>PT Techub by Binawan</dd></div><div><dt>Tools</dt><dd>React JS, Mobile</dd></div></dl>
-              <h5>What I did</h5>
-              <ul class="detail-list"><li>Developed check-in and check-out time recording.</li><li>Developed the leave request submission flow.</li></ul>
-            </template>
           </article>
-          <article class="slide" data-project="3">
-            <div class="shot" data-img="images/mbkm.jpg">
-              <div class="mock"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body"><i class="mdi mdi-school-outline"></i></div></div>
-              <span class="shot-badge"><i class="mdi mdi-school-outline"></i></span>
+          <article class="slide" data-drive="https://drive.google.com/file/d/15TS3ZIhNmpLFZAtCY5Tesq2dg3nXAekX/view?usp=sharing">
+            <div class="shot">
+              <div class="mock"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body"><i class="mdi mdi-view-dashboard-outline"></i></div></div>
+              <span class="shot-badge"><i class="mdi mdi-view-dashboard-outline"></i></span>
             </div>
             <div class="slide-body">
-              <span class="tag-type">Development</span>
-              <h4>MBKM Program Web App</h4>
-              <p>A web application for the Ministry of Education's MBKM program, enabling students to learn outside their study program or campus.</p>
-              <button class="more" type="button">View Details <i class="mdi mdi-arrow-right"></i></button>
+              <span class="tag-type"><span data-i18n="tagFe">Front-End Development</span></span>
+              <h4>MBKM — Back Office</h4>
+              <p><span data-i18n="pj9">Developed the back-office dashboard for the MBKM (Merdeka Belajar Kampus Merdeka) program, used by admins to manage applicants, lecturers, partners, academic programs, courses, news, and files. Built with React JS.</span></p>
+              <button class="more" type="button"><span data-i18n="viewProject">View Project</span> <i class="mdi mdi-arrow-right"></i></button>
             </div>
-            <template class="detail">
-              <dl class="meta"><div><dt>Role</dt><dd>Front-End Developer</dd></div><div><dt>Company</dt><dd>PT Techub by Binawan</dd></div><div><dt>Tools</dt><dd>React JS</dd></div></dl>
-              <h5>What I did</h5>
-              <ul class="detail-list"><li>Developed the web application for the MBKM (Merdeka Belajar Kampus Merdeka) program.</li></ul>
-            </template>
           </article>
-          <article class="slide" data-project="4">
-            <div class="shot" data-img="images/cyber-security.jpg">
-              <div class="mock"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body"><i class="mdi mdi-shield-lock-outline"></i></div></div>
-              <span class="shot-badge"><i class="mdi mdi-shield-lock-outline"></i></span>
+          <article class="slide" data-drive="https://drive.google.com/file/d/1gDU177s4wugRMsVhEFyTdvf9IzP1J9vY/view?usp=sharing">
+            <div class="shot">
+              <div class="mock"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body"><i class="mdi mdi-web"></i></div></div>
+              <span class="shot-badge"><i class="mdi mdi-web"></i></span>
             </div>
             <div class="slide-body">
-              <span class="tag-type">Training</span>
-              <h4>Cyber Security Mentoring</h4>
-              <p>Mentored participants in cyber security training, from information security basics to ethical hacking, with pre/post-test evaluation.</p>
-              <button class="more" type="button">View Details <i class="mdi mdi-arrow-right"></i></button>
+              <span class="tag-type"><span data-i18n="tagFe">Front-End Development</span></span>
+              <h4>MBKM — Front Office</h4>
+              <p><span data-i18n="pj10">Developed the public website for Binawan's MBKM program, presenting programs and facilities, news and publications, clients, and contact information for prospective students. Built with React JS.</span></p>
+              <button class="more" type="button"><span data-i18n="viewProject">View Project</span> <i class="mdi mdi-arrow-right"></i></button>
             </div>
-            <template class="detail">
-              <dl class="meta"><div><dt>Role</dt><dd>Mentor / Instructor</dd></div><div><dt>Company</dt><dd>Infra Digital Foundation</dd></div><div><dt>Tools</dt><dd>Security, Mentoring</dd></div></dl>
-              <h5>What I did</h5>
-              <ul class="detail-list"><li>Delivered material on information security fundamentals, network security, ethical hacking, and application security.</li><li>Measured participants' understanding through pre-tests and post-tests.</li></ul>
-            </template>
           </article>
         </div>
       </div>
       <div class="slider-dots" id="sliderDots"></div>
     </section>
 
-    <!-- PROJECT DETAIL MODAL -->
-    <dialog class="modal" id="projectModal">
-      <button class="modal-close" id="modalClose" aria-label="Close"><i class="mdi mdi-close"></i></button>
-      <span class="tag-type" id="mType"></span>
-      <h4 id="mTitle"></h4>
-      <p id="mDesc"></p>
-      <div id="mDetail"></div>
-    </dialog>
 
     <!-- CONTACT -->
     <section class="section" id="contact">
-      <div class="sec-label"><span>05</span> Contact</div>
-      <h3 class="sec-title">Let's work together.</h3>
+      <div class="sec-label"><span>05</span> <span data-i18n="navContact">Contact</span></div>
+      <h3 class="sec-title"><span data-i18n="contactTitle">Let's work together.</span></h3>
 
       <div class="contact">
         <aside class="contact-card">
-          <h4>Get in touch</h4>
-          <p>Have a QA role, a project, or just a question? I'd be glad to hear from you.</p>
+          <h4><span data-i18n="getInTouch">Get in touch</span></h4>
+          <p><span data-i18n="contactLead">Have a QA role, a project, or just a question? I'd be glad to hear from you.</span></p>
           <ul class="c-list">
-            <li><i class="mdi mdi-map-marker-outline"></i><div><small>Location</small>Bogor, Indonesia</div></li>
+            <li><i class="mdi mdi-map-marker-outline"></i><div><small><span data-i18n="location">Location</span></small>Bogor, Indonesia</div></li>
             <li><i class="mdi mdi-email-outline"></i><div><small>Email</small><a href="mailto:nadilaindriyanirangkuti@gmail.com">nadilaindriyanirangkuti@gmail.com</a></div></li>
             <li><i class="mdi mdi-linkedin"></i><div><small>LinkedIn</small><a href="https://www.linkedin.com/in/nadila-indriyani-r-2b69b2191/" target="_blank" rel="noopener">nadila-indriyani-r</a></div></li>
           </ul>
-          <div class="avail"><span class="dot"></span> Available for full-time QA opportunities</div>
         </aside>
 
         <form class="c-form" id="contactForm">
           <fieldset class="topics">
-            <legend>What's this about?</legend>
-            <label><input type="radio" name="topic" value="Job Opportunity" checked><span>Job Opportunity</span></label>
-            <label><input type="radio" name="topic" value="Collaboration"><span>Collaboration</span></label>
-            <label><input type="radio" name="topic" value="Other"><span>Other</span></label>
+            <legend><span data-i18n="topicQ">What's this about?</span></legend>
+            <label><input type="radio" name="topic" value="Job Opportunity" checked><span><span data-i18n="topicJob">Job Opportunity</span></span></label>
+            <label><input type="radio" name="topic" value="Collaboration"><span><span data-i18n="topicCollab">Collaboration</span></span></label>
+            <label><input type="radio" name="topic" value="Other"><span><span data-i18n="topicOther">Other</span></span></label>
           </fieldset>
           <div class="row2">
-            <label class="field"><span>Full name</span><input type="text" id="cName" placeholder="e.g. Sarah Wijaya" required></label>
-            <label class="field"><span>Email address</span><input type="email" id="cEmail" placeholder="you@company.com" required></label>
+            <label class="field"><span><span data-i18n="fName">Full name</span></span><input type="text" id="cName" placeholder="e.g. Sarah Wijaya" data-i18n-ph="phName" required></label>
+            <label class="field"><span><span data-i18n="fEmail">Email address</span></span><input type="email" id="cEmail" placeholder="you@company.com" data-i18n-ph="phEmail" required></label>
           </div>
-          <label class="field"><span>Company <em>(optional)</em></span><input type="text" id="cCompany" placeholder="Company name"></label>
-          <label class="field"><span>Message</span><textarea id="cMsg" rows="5" placeholder="Tell me a little about the role or project..." required></textarea></label>
+          <label class="field"><span data-i18n="fCompany">Company <em>(optional)</em></span><input type="text" id="cCompany" placeholder="Company name" data-i18n-ph="phCompany"></label>
+          <label class="field"><span><span data-i18n="fMsg">Message</span></span><textarea id="cMsg" rows="5" placeholder="Tell me a little about the role or project..." data-i18n-ph="phMsg" required></textarea></label>
           <div class="form-foot">
-            <button type="submit" class="btn">Send Message <i class="mdi mdi-send-outline"></i></button>
-            <p class="note"><i class="mdi mdi-information-outline"></i> This opens your email app with the message ready to send.</p>
+            <button type="submit" class="btn"><span data-i18n="send">Send Message</span> <i class="mdi mdi-send-outline"></i></button>
+            <p class="note"><i class="mdi mdi-information-outline"></i> <span data-i18n="note">This opens your email app with the message ready to send.</span></p>
           </div>
         </form>
       </div>
@@ -379,5 +436,6 @@
   </main>
 
   <script src="script.js"></script>
+  <script src="i18n.js"></script>
 </body>
 </html>

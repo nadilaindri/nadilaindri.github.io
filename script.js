@@ -52,7 +52,7 @@ window.addEventListener('scroll', setActive);
 setActive();
 
 // Reveal on scroll
-const revealEls = document.querySelectorAll('.sec-title, .about, .group, .job, .steps li, .slider, .edu-item, .contact-card, .c-form, .stats');
+const revealEls = document.querySelectorAll('.sec-title, .about, .group, .xp-item, .cert-card, .steps li, .slider, .edu-item, .contact-card, .c-form, .stats');
 revealEls.forEach(el => el.classList.add('reveal'));
 const io = new IntersectionObserver(entries => {
   entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('show'); io.unobserve(en.target); } });
@@ -113,28 +113,102 @@ const resume = () => { clearInterval(auto); auto = setInterval(next, 5000); };
 ['mouseenter', 'touchstart', 'focusin'].forEach(ev => slidesEl.addEventListener(ev, pause, { passive: true }));
 ['mouseleave', 'focusout'].forEach(ev => slidesEl.addEventListener(ev, resume));
 
-// Use real screenshots when images/<project>.jpg exists
-document.querySelectorAll('.shot[data-img]').forEach(shot => {
-  const im = new Image();
-  im.onload = () => { im.alt = shot.closest('.slide').querySelector('h4').textContent; shot.querySelector('.mock').replaceWith(im); };
-  im.src = shot.dataset.img;
-});
-
-// Project detail modal
-const modal = document.getElementById('projectModal');
-slideEls.forEach(slide => slide.querySelector('.more').addEventListener('click', () => {
-  document.getElementById('mType').textContent = slide.querySelector('.tag-type').textContent;
-  document.getElementById('mTitle').innerHTML = slide.querySelector('h4').innerHTML;
-  document.getElementById('mDesc').innerHTML = slide.querySelector('p').innerHTML;
-  const detail = document.getElementById('mDetail');
-  detail.innerHTML = '';
-  detail.appendChild(slide.querySelector('template.detail').content.cloneNode(true));
-  pause();
-  modal.showModal();
+// Certificate modal: shows the image from Google Drive and links to it
+const certModal = document.getElementById('certModal');
+const driveId = url => (url.match(/\/d\/([\w-]+)/) || url.match(/[?&]id=([\w-]+)/) || [])[1];
+document.querySelectorAll('.cert-card').forEach(card => card.addEventListener('click', () => {
+  const url = card.dataset.drive.trim();
+  const id = url && driveId(url);
+  const title = card.querySelector('h4').textContent;
+  document.getElementById('cTitle').textContent = title;
+  document.getElementById('cIssuer').textContent = card.querySelector('.cert-issuer').textContent;
+  const box = document.getElementById('cImg');
+  if (id) {
+    box.innerHTML = '';
+    const img = new Image();
+    img.alt = title + ' certificate';
+    img.referrerPolicy = 'no-referrer'; // Google Drive blocks images requested with a referrer
+    const sources = [`https://drive.google.com/thumbnail?id=${id}&sz=w1600`, `https://lh3.googleusercontent.com/d/${id}=w1600`];
+    img.onerror = () => {
+      if (sources.length) img.src = sources.shift();
+      else box.innerHTML = '<div class="empty"><i class="mdi mdi-image-off-outline"></i>Certificate preview is unavailable right now.</div>';
+    };
+    img.src = sources.shift();
+    box.appendChild(img);
+  } else {
+    box.innerHTML = '<div class="empty"><i class="mdi mdi-certificate-outline"></i>Certificate image coming soon.</div>';
+  }
+  if (typeof pause === 'function') pause();
+  certModal.showModal();
 }));
-document.getElementById('modalClose').addEventListener('click', () => modal.close());
-modal.addEventListener('click', e => { if (e.target === modal) modal.close(); });
-modal.addEventListener('close', resume);
+document.getElementById('certClose').addEventListener('click', () => certModal.close());
+certModal.addEventListener('click', e => { if (e.target === certModal) certModal.close(); });
+
+// Project slider: load each card's screenshot from Google Drive (data-drive)
+const driveImage = (id, w = 1000) => {
+  const img = new Image();
+  img.referrerPolicy = 'no-referrer'; // Google Drive blocks images requested with a referrer
+  const sources = [`https://drive.google.com/thumbnail?id=${id}&sz=w${w}`, `https://lh3.googleusercontent.com/d/${id}=w${w}`];
+  img.onerror = () => { if (sources.length) img.src = sources.shift(); };
+  img.src = sources.shift();
+  return img;
+};
+slideEls.forEach(slide => {
+  const id = slide.dataset.drive && driveId(slide.dataset.drive);
+  if (!id) return;
+  const shot = slide.querySelector('.shot');
+  const img = driveImage(id);
+  img.alt = slide.querySelector('h4').textContent + ' screenshot';
+  img.onload = () => {
+    if (img.naturalHeight > img.naturalWidth) shot.classList.add('portrait');
+    shot.querySelector('.mock')?.replaceWith(img);
+  };
+});
 
 // Hide social icons that don't have a link yet
 document.querySelectorAll('.soc[href="#"]').forEach(a => a.remove());
+
+// Typing headline (Hello! I AM ...)
+(() => {
+  const el = document.getElementById('typed');
+  if (!el) return;
+  const words = el.dataset.words.split('|').map(w => w.trim()).filter(Boolean);
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || words.length === 0) return;
+  let w = 0, i = 0, deleting = false;
+  el.textContent = '';
+  const tick = () => {
+    const word = words[w];
+    el.textContent = word.slice(0, i);
+    if (!deleting && i < word.length) { i++; return setTimeout(tick, 85); }
+    if (!deleting) { deleting = true; return setTimeout(tick, 1800); }
+    if (i > 0) { i--; return setTimeout(tick, 40); }
+    deleting = false; w = (w + 1) % words.length;
+    setTimeout(tick, 350);
+  };
+  tick();
+})();
+
+// View Project: show the project screenshot in a pop-up (reuses the certificate modal)
+slideEls.forEach(slide => {
+  const btn = slide.querySelector('button.more');
+  const id = slide.dataset.drive && driveId(slide.dataset.drive);
+  if (!btn || !id) return;
+  btn.addEventListener('click', () => {
+    const title = slide.querySelector('h4').textContent;
+    document.getElementById('cIssuer').textContent = slide.querySelector('.tag-type').textContent;
+    document.getElementById('cTitle').textContent = title;
+    const box = document.getElementById('cImg');
+    box.innerHTML = '';
+    const img = driveImage(id, 1600);
+    img.alt = title + ' screenshot';
+    const tryFallback = img.onerror; // driveImage's fallback to the second Drive URL
+    img.onerror = () => {
+      if (img.src.includes('/thumbnail')) tryFallback();
+      else box.innerHTML = '<div class="empty"><i class="mdi mdi-image-off-outline"></i>Preview is unavailable right now.</div>';
+    };
+    box.appendChild(img);
+    if (typeof pause === 'function') pause();
+    certModal.showModal();
+  });
+});
+certModal.addEventListener('close', () => { if (typeof resume === 'function') resume(); });
