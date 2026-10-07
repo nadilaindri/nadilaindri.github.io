@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261007e">
+  <link rel="stylesheet" href="style.css?v=20261007f">
 </head>
 <body>
 
@@ -411,20 +411,14 @@
         </aside>
 
         <form class="c-form" id="contactForm">
-          <fieldset class="topics">
-            <legend><span data-i18n="topicQ">What's this about?</span></legend>
-            <label><input type="radio" name="topic" value="Job Opportunity" checked><span><span data-i18n="topicJob">Job Opportunity</span></span></label>
-            <label><input type="radio" name="topic" value="Collaboration"><span><span data-i18n="topicCollab">Collaboration</span></span></label>
-            <label><input type="radio" name="topic" value="Other"><span><span data-i18n="topicOther">Other</span></span></label>
-          </fieldset>
           <div class="row2">
-            <label class="field"><span><span data-i18n="fName">Full name</span></span><input type="text" id="cName" placeholder="e.g. Sarah Wijaya" data-i18n-ph="phName" required></label>
-            <label class="field"><span><span data-i18n="fEmail">Email address</span></span><input type="email" id="cEmail" placeholder="you@company.com" data-i18n-ph="phEmail" required></label>
+            <input type="text" id="cName" placeholder="Your name" data-i18n-ph="phName" aria-label="Your name" required>
+            <input type="email" id="cEmail" placeholder="Your email" data-i18n-ph="phEmail" aria-label="Your email" required>
           </div>
-          <label class="field"><span data-i18n="fCompany">Company <em>(optional)</em></span><input type="text" id="cCompany" placeholder="Company name" data-i18n-ph="phCompany"></label>
-          <label class="field"><span><span data-i18n="fMsg">Message</span></span><textarea id="cMsg" rows="5" placeholder="Tell me a little about the role or project..." data-i18n-ph="phMsg" required></textarea></label>
+          <input type="text" id="cSubject" placeholder="Your Subject.." data-i18n-ph="phSubject" aria-label="Subject" required>
+          <textarea id="cMsg" rows="5" placeholder="Your message..." data-i18n-ph="phMsg" aria-label="Message" required></textarea>
           <div class="form-foot">
-            <button type="submit" class="btn"><span data-i18n="send">Send Message</span> <i class="mdi mdi-send-outline"></i></button>
+            <button type="submit" class="btn btn-block"><span data-i18n="send">Send Message</span> <i class="mdi mdi-send-outline"></i></button>
             <p class="note"><i class="mdi mdi-information-outline"></i> <span data-i18n="note">This opens your email app with the message ready to send.</span></p>
           </div>
         </form>
@@ -435,7 +429,7 @@
 
   </main>
 
-  <script src="script.js?v=20261007e"></script>
-  <script src="i18n.js?v=20261007e"></script>
+  <script src="script.js?v=20261007f"></script>
+  <script src="i18n.js?v=20261007f"></script>
 </body>
 </html>

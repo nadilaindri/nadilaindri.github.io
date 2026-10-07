@@ -71,10 +71,8 @@ document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('contactForm').addEventListener('submit', e => {
   e.preventDefault();
   const v = id => document.getElementById(id).value.trim();
-  const topic = document.querySelector('input[name="topic"]:checked').value;
-  const company = v('cCompany');
-  const subject = `[${topic}] Message from ${v('cName')}${company ? ' (' + company + ')' : ''}`;
-  const body = `${v('cMsg')}\n\n— ${v('cName')}\n${v('cEmail')}${company ? '\n' + company : ''}`;
+  const subject = v('cSubject');
+  const body = `${v('cMsg')}\n\n— ${v('cName')}\n${v('cEmail')}`;
   window.location.href = `mailto:nadilaindriyanirangkuti@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
 

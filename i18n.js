@@ -84,20 +84,12 @@ const ID_TEXT = {
   getInTouch: "Hubungi saya",
   contactLead: "Punya lowongan QA, proyek, atau sekadar pertanyaan? Saya senang mendengar dari Anda.",
   location: "Lokasi",
-  topicQ: "Topik pesan",
-  topicJob: "Lowongan Kerja",
-  topicCollab: "Kolaborasi",
-  topicOther: "Lainnya",
-  fName: "Nama lengkap",
-  fEmail: "Alamat email",
-  fMsg: "Pesan",
   send: "Kirim Pesan",
   note: "Tombol ini akan membuka aplikasi email Anda dengan pesan yang siap dikirim.",
-  fCompany: "Perusahaan <em>(opsional)</em>",
-  phName: "cth. Sarah Wijaya",
-  phEmail: "anda@perusahaan.com",
-  phCompany: "Nama perusahaan",
-  phMsg: "Ceritakan sedikit tentang posisi atau proyeknya..."
+  phName: "Nama Anda",
+  phEmail: "Email Anda",
+  phSubject: "Subjek pesan..",
+  phMsg: "Pesan Anda..."
 };
 
 (() => {
