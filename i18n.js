@@ -84,6 +84,7 @@ const ID_TEXT = {
   getInTouch: "Hubungi saya",
   contactLead: "Punya lowongan QA, proyek, atau sekadar pertanyaan? Saya senang mendengar dari Anda.",
   location: "Lokasi",
+  phone: "Telepon / WhatsApp",
   send: "Kirim Pesan",
   note: "Tombol ini akan membuka aplikasi email Anda dengan pesan yang siap dikirim.",
   phName: "Nama Anda",
